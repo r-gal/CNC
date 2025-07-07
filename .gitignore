@@ -1,4 +1,7 @@
 *.emProject
 *.emSession
 *.jlink
+*.mxproject
+Drivers/
 Output/
+!README.md
