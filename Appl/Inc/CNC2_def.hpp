@@ -1,0 +1,66 @@
+#ifndef CNC2_DEF_H
+#define CNC2_DEF_H
+
+enum PLANE_SELECT_et
+{
+  PLANE_XY,
+  PLANE_XZ,
+  PLANE_YZ,
+  PLANE_UNDEF
+};
+
+enum AXE_et
+{
+  AXE_X,
+  AXE_Y,
+  AXE_Z,
+  AXE_A,
+  AXE_NOOF
+};
+
+enum DIR_et
+{
+ DIR_DOWN,
+ DIR_UP,
+ DIR_NONE,
+ DIR_UNN
+};
+
+enum MOVE_TYPE_et
+{
+  MOVE_LINE,
+  MOVE_ARC,
+  MOVE_ARC2,
+  MOVE_DELAY,
+  MOVE_AUTOBASE,
+  MOVE_SET_SPINDLE,
+  MOVE_PROBE
+};
+
+enum LIMITER_MODE_et
+{
+  LIM_NONE,
+  LIM_ONE,
+  LIM_DUAL
+};
+
+enum LIMITER_TYPE_et
+{
+  LIM_TYPE_NO,
+  LIM_TYPE_NC
+
+};
+
+enum SEGMENT_REULT_et
+{
+  LAST_SEGMENT,
+  MORE_SEGMENTS,
+  IGNORE_SEGMENT,
+  IGNORE_LAST_SEGMENT
+
+};
+
+#define PROBE_FINISCHED  0x0001
+#define MAN_MOVE_FINISCHED  0x0002
+
+#endif
