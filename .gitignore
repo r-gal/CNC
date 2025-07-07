@@ -1,0 +1,4 @@
+*.emProject
+*.emSession
+*.jlink
+Output/
