@@ -1,0 +1,9 @@
+[submodule "Lib_Common"]
+	path = Lib_Common
+	url = https://github.com/r-gal/Lib_Common
+[submodule "Lib_Ethernet"]
+	path = Lib_Ethernet
+	url = https://github.com/r-gal/Lib_Ethernet
+[submodule "Lib_3D"]
+	path = Lib_3D
+	url = https://github.com/r-gal/Lib_3D
