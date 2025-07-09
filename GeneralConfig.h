@@ -33,6 +33,8 @@
 #define CONF_USE_RNG 1
 #define CONF_USE_BOOTUNIT 0
 
+#define USE_TELNET 1
+
 
 #define CONF_USE_UART_TERMINAL 0
 #define CONF_USE_TIME 1

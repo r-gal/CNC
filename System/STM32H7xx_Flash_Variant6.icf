@@ -143,5 +143,5 @@ place in RAM with auto order                { block tls,                        
                                               readwrite,                                            // Catch-all for initialized/uninitialized data sections (e.g. .data, .noinit)
                                               zeroinit                                              // Catch-all for zero-initialized data sections (e.g. .bss)
                                             };
-place in RAM                                { block heap };                                         // Heap reserved block
-place at end of RAM                         { block stack };                                        // Stack reserved block at the end
+place in DTCM_RAM1                                { block heap };                                         // Heap reserved block
+place at end of DTCM_RAM1                         { block stack };                                        // Stack reserved block at the end

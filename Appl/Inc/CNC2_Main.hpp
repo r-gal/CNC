@@ -3,7 +3,7 @@
 
 #include "stm32h7xx_hal.h"
 
-#include "CommonDef.hpp"
+#include "GeneralConfig.h"
 
 
 

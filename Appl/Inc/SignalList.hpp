@@ -51,7 +51,7 @@ class SignalList_c
   };
 };
 
-#include "commonSignal.hpp"
+#include "CommonSignal.hpp"
 
 class testSig_c : public Sig_c
 {
