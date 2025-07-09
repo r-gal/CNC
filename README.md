@@ -21,6 +21,7 @@ git clone https://github.com/r-gal/CNC --recursive
 ```
 git submodule add https://github.com/FreeRTOS/FreeRTOS-Kernel
 ``` 
+Use source files from main directory and from correct portable.
 Choose correct port.c and portmacro.h files from portable directory - for STM32H725 and GCC compilator use portable\GCC\ARM_CM7\r0p1
 Do not add any memory manager from portable/MemMang - Application offers own memory manager.
 
@@ -31,13 +32,26 @@ USE_HAL_DRIVER
 STM32H725xx
 STM32_THREAD_SAFE_STRATEGY=5
 ```
+5. Add user include directories
+```
+stm32h7xx-hal-driver\Inc
+cmsis-device-h7\Include
+FreeRTOS-Kernel\include
+FreeRTOS-Kernel\portable\GCC\ARM_CM7\r0p1
+Core\Inc
+Appl\Inc
+Lib_3D
+Lib_Common
+Lib_Ethernet
+```
+
+6. Configure Memory map to use DTCM memory - see files in System directory
 
 ## Method 1 - using STM32CubeMX 
 
 1. Open myCnc2_v2.ioc in STM32CubeMX
 2. Run Generate code
 3. Add to project generated files: Core, CMSIS, HAL drivers
-4. Configure Memory map to use DTCM memory - see files in System directory
 
 ## Method 2 - use generated files
 1. Attach CMSIS files
@@ -49,7 +63,6 @@ Add to project file startup_stm32h725xx.s
 ```
 git submodule add https://github.com/STMicroelectronics/stm32h7xx-hal-driver
 ```
-3. Add files from System directory.
 
 ## Configuration
 
