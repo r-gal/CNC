@@ -1,6 +1,6 @@
 # Overview
 
-This program is firmware to CNC driver module based on ARM STM32H725. Module need GUI application on PC, source is in https://github.com/r-gal/CNC_gui repository.
+This program is firmware to CNC driver module based on ARM STM32H725. Module need GUI application on PC, source is in https://github.com/r-gal/CNC_app repository.
 
 
 # Compilation
