@@ -285,7 +285,6 @@ void Axe_c::MasterSetSpeed(float speed)
   printf("Set speed = %f->%f\n",actSpeed,speed);
   #endif
 
-
   actSpeed = speed;
   uint32_t periodInt = 0;
 
@@ -302,6 +301,7 @@ void Axe_c::MasterSetSpeed(float speed)
   }
   
   AXE_MASTER_Timer->ARR = periodInt;
+  //printf("Set speed %d\n",periodInt);
 }
 
 

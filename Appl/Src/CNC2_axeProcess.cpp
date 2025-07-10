@@ -20,6 +20,7 @@ extern TIM_HandleTypeDef AXE_Y_TIMER;
 extern TIM_HandleTypeDef AXE_Z_TIMER;
 extern TIM_HandleTypeDef AXE_A_TIMER;
 extern TIM_HandleTypeDef AXE_B_TIMER;
+extern TIM_HandleTypeDef SYNC_TIMER;
 
 CncAxes_c* axes_p = nullptr;
 
@@ -1275,11 +1276,11 @@ void SyncTimerCallback(struct __TIM_HandleTypeDef *htim)
 
       #if TEST_AXE == 1
       printf("SYNC = %d, AXES TIM = %d %d %d %d\n",
-      AXE_SYNC_Timer->CNT,
-      AXE_X_Timer->CNT,
-      AXE_Y_Timer->CNT,
-      AXE_Z_Timer->CNT,
-      AXE_A_Timer->CNT);
+      SYNC_TIMER.Instance->CNT,
+      AXE_X_TIMER.Instance->CNT,
+      AXE_Y_TIMER.Instance->CNT,
+      AXE_Z_TIMER.Instance->CNT,
+      AXE_A_TIMER.Instance->CNT);
       #endif
       AXE_SYNC_Timer->CNT = 0;
 
@@ -1491,7 +1492,7 @@ void AxeSoftPosCallback(struct __TIM_HandleTypeDef *htim)
 
 
 
-  //HAL_GPIO_WritePin(TestDirPort[idx],TestDirPin[idx],GPIO_PIN_SET);
+  HAL_GPIO_WritePin(TestDirPort[idx],TestDirPin[idx],GPIO_PIN_SET);
   DIR_et dir;
   int scale;
 
