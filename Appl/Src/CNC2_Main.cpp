@@ -202,6 +202,10 @@ static void prvSetupHeap( void )
  extern "C" {
 #endif
 
+void vApplicationTickHook(void)
+{
+  CncAxeProcess_c::CriticalChecksTick();
+}
 
 void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer,
                                     StackType_t **ppxIdleTaskStackBuffer,
