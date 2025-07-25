@@ -1,0 +1,156 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="CNC_v2" target="8" version="2">
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG"
+    gcc_debugging_level="Level 3"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="None" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_debugging_level="Level 2"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="Level 2 balanced" />
+  <project Name="CNC_v2">
+    <configuration
+      LIBRARY_IO_TYPE="RTT"
+      Name="Common"
+      Target="STM32H725ZGTx"
+      arm_architecture="v7EM"
+      arm_compiler_variant="SEGGER"
+      arm_core_type="Cortex-M7"
+      arm_endian="Little"
+      arm_fp_abi="Hard"
+      arm_fpu_type="FPv5-D16"
+      arm_linker_heap_size="1024"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="2048"
+      arm_linker_variant="SEGGER"
+      arm_rtl_variant="SEGGER"
+      arm_simulator_memory_simulation_parameter="RAM;0x00000000;0x00010000;ROM;0x08000000;0x00100000;RAM;0x20000000;0x00020000;RAM;0x24000000;0x00020000;RAM;0x30000000;0x00008000;RAM;0x38000000;0x00004000;RAM;0x38800000;0x00001000"
+      arm_target_debug_interface_type="ADIv5"
+      arm_target_device_name="STM32H725ZG"
+      arm_target_interface_type="SWD"
+      c_preprocessor_definitions="DATA_IN_D2_SRAM;ARM_MATH_CM7;STM32H725xx;__STM32H725_SUBFAMILY;__STM32H7XX_FAMILY"
+      c_user_include_directories="$(ProjectDir)/CMSIS_5/CMSIS/Core/Include;$(ProjectDir)/STM32H7xx/Device/Include"
+      debug_register_definition_file="$(ProjectDir)/STM32H723_Registers.xml"
+      debug_stack_pointer_start="__stack_end__"
+      debug_start_from_entry_point_symbol="Yes"
+      debug_target_connection="J-Link"
+      gcc_entry_point="Reset_Handler"
+      link_linker_script_file="$(ProjectDir)/STM32H7xx_Flash_Variant6.icf"
+      linker_memory_map_file="$(ProjectDir)/STM32H725ZGTx_MemoryMap.xml"
+      linker_printf_fp_enabled="Float"
+      linker_printf_width_precision_supported="Yes"
+      macros="DeviceHeaderFile=$(PackagesDir)/STM32H7xx/Device/Include/stm32h7xx.h;DeviceSystemFile=$(PackagesDir)/STM32H7xx/Device/Source/system_stm32h7xx.c;DeviceVectorsFile=$(PackagesDir)/STM32H7xx/Source/stm32h725xx_Vectors.s;DeviceFamily=STM32H7xx;DeviceSubFamily=STM32H725;Target=STM32H725ZGTx"
+      project_directory=""
+      project_type="Executable"
+      target_reset_script="Reset();"
+      target_trace_initialize_script="EnableTrace(&quot;$(TraceInterfaceType)&quot;)" />
+    <configuration
+      Name="Debug"
+      c_preprocessor_definitions="USE_PWR_LDO_SUPPLY;USE_HAL_DRIVER;STM32H725xx;STM32_THREAD_SAFE_STRATEGY=5"
+      c_user_include_directories=".;Drivers\\CMSIS\\Include;Drivers\\STM32H7xx_HAL_Driver\\Inc;Drivers\\CMSIS\\Device\\ST\\STM32H7xx\\Include;FreeRTOS-Kernel\\include;FreeRTOS-Kernel\\portable\\GCC\\ARM_CM7\\r0p1;Core/Inc;Appl\\Inc;Lib_3D;Lib_Common;Lib_Ethernet"
+      link_linker_script_file="$(ProjectDir)/System/STM32H7xx_Flash_Variant6.icf"
+      link_use_linker_script_file="Yes"
+      linker_memory_map_file="$(ProjectDir)/System/STM32H725ZGTx_MemoryMap.xml"
+      supplyPower="Yes" />
+    <configuration
+      Name="Release"
+      c_preprocessor_definitions="USE_PWR_LDO_SUPPLY;USE_HAL_DRIVER;STM32H725xx;STM32_THREAD_SAFE_STRATEGY=5"
+      c_user_include_directories=".;cmsis-device-h7\\Include;stm32h7xx-hal-driver\\Inc;FreeRTOS-Kernel\\include;FreeRTOS-Kernel\\portable\\GCC\\ARM_CM7\\r0p1;Core/Inc;Appl\\Inc;Lib_Common;Lib_Ethernet;Lib_3D" />
+    <folder Name="Appl" exclude="" filter="" path="Appl" recurse="Yes" />
+    <folder Name="CMSIS Files">
+      <file file_name="STM32H7xx/Device/Include/stm32h7xx.h" />
+      <file file_name="STM32H7xx/Device/Source/system_stm32h7xx.c">
+        <configuration
+          Name="Common"
+          default_code_section=".init"
+          default_const_section=".init_rodata" />
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+    </folder>
+    <folder Name="Core" exclude="" filter="" path="Core" recurse="Yes" />
+    <folder
+      Name="Drivers"
+      exclude=""
+      filter=""
+      path="Drivers"
+      recurse="Yes" />
+    <folder Name="FTOS">
+      <file file_name="FreeRTOS-Kernel/.git-blame-ignore-revs" />
+      <file file_name="FreeRTOS-Kernel/.gitattributes" />
+      <file file_name="FreeRTOS-Kernel/.gitmodules" />
+      <file file_name="FreeRTOS-Kernel/CMakeLists.txt" />
+      <file file_name="FreeRTOS-Kernel/GitHub-FreeRTOS-Kernel-Home.url" />
+      <file file_name="FreeRTOS-Kernel/History.txt" />
+      <file file_name="FreeRTOS-Kernel/LICENSE.md" />
+      <file file_name="FreeRTOS-Kernel/MISRA.md" />
+      <file file_name="FreeRTOS-Kernel/Quick_Start_Guide.url" />
+      <file file_name="FreeRTOS-Kernel/README.md" />
+      <file file_name="FreeRTOS-Kernel/croutine.c" />
+      <file file_name="FreeRTOS-Kernel/cspell.config.yaml" />
+      <file file_name="FreeRTOS-Kernel/event_groups.c" />
+      <file file_name="FreeRTOS-Kernel/list.c" />
+      <file file_name="FreeRTOS-Kernel/manifest.yml" />
+      <file file_name="FreeRTOS-Kernel/portable/GCC/ARM_CM7/r0p1/port.c" />
+      <file file_name="FreeRTOS-Kernel/queue.c" />
+      <file file_name="FreeRTOS-Kernel/stream_buffer.c" />
+      <file file_name="FreeRTOS-Kernel/tasks.c" />
+      <file file_name="FreeRTOS-Kernel/timers.c" />
+    </folder>
+    <folder Name="Lib_3D" exclude="" filter="" path="Lib_3D" recurse="Yes" />
+    <folder
+      Name="Lib_Common"
+      exclude=""
+      filter=""
+      path="Lib_Common"
+      recurse="No" />
+    <folder
+      Name="Lib_Ethernet"
+      exclude=""
+      filter=""
+      path="Lib_Ethernet"
+      recurse="Yes" />
+    <folder Name="Script Files">
+      <file file_name="STM32H7xx/Scripts/STM32H7xx_Target.js">
+        <configuration Name="Common" file_type="Reset Script" />
+      </file>
+    </folder>
+    <folder Name="Source">
+      <file file_name="EthernetConfig.hpp" />
+      <file file_name="FreeRTOSConfig.h" />
+      <file file_name="GeneralConfig.h" />
+    </folder>
+    <folder Name="System">
+      <file file_name="System/SEGGER_THUMB_Startup.s">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="System/STM32H725XG_FLASH.ld" />
+      <file file_name="System/STM32H725ZGTx_MemoryMap.xml" />
+      <file file_name="System/STM32H7xx_Flash_Variant6.icf" />
+      <file file_name="System/STM32H7xx_Startup.s">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="System/stm32h725xx_Vectors.s">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
+    </folder>
+    <folder Name="System Files">
+      <file file_name="SEGGER_THUMB_Startup.s">
+        <configuration Name="Debug" build_exclude_from_build="No" />
+        <configuration Name="Release" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="STM32H7xx/Source/STM32H7xx_Startup.s">
+        <configuration Name="Debug" build_exclude_from_build="No" />
+        <configuration Name="Release" build_exclude_from_build="Yes" />
+      </file>
+      <file file_name="STM32H7xx/Source/stm32h725xx_Vectors.s">
+        <configuration Name="Common" file_type="Assembly" />
+        <configuration Name="Debug" build_exclude_from_build="No" />
+        <configuration Name="Release" build_exclude_from_build="Yes" />
+      </file>
+    </folder>
+  </project>
+</solution>

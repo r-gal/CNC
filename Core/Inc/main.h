@@ -57,20 +57,21 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define SPINDLE_TIMER htim12
+#define AXE_Z_TIMER htim15
+#define SPEED_TIMER htim16
+#define AXE_A_TIMER htim24
+#define SYNC_TIMER htim23
+#define AXE_Y_TIMER htim5
+#define ENC_Z_TIMER htim8
+#define AXE_X_TIMER htim2
+#define ENC_X_TIMER htim3
+#define MASTER_TIMER htim1
+#define ENC_Y_TIMER htim4
+#define AXE_B_TIMER htim8
 #define SPEED_PERIOD 10
 #define configRUNTIME_TIMER htim7
-#define MASTER_TIMER htim1
-#define SPEED_TIMER htim16
-#define SYNC_TIMER htim23
-#define AXE_X_TIMER htim2
-#define AXE_Y_TIMER htim5
-#define AXE_Z_TIMER htim15
-#define AXE_A_TIMER htim24
-#define SPINDLE_TIMER htim12
-#define ENC_X_TIMER htim3
-#define ENC_Y_TIMER htim4
-#define ENC_Z_TIMER htim8
-#define AXE_B_TIMER htim8
+#define MASTER_FREQ 150000000
 #define panel0_Pin GPIO_PIN_2
 #define panel0_GPIO_Port GPIOE
 #define limZ_Pin GPIO_PIN_3

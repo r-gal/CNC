@@ -20,6 +20,7 @@
 #include "main.h"
 #include "eth.h"
 #include "i2c.h"
+#include "iwdg.h"
 #include "memorymap.h"
 #include "rng.h"
 #include "rtc.h"
@@ -110,6 +111,7 @@ int main(void)
   MX_TIM7_Init();
   MX_TIM16_Init();
   MX_RNG_Init();
+  MX_IWDG1_Init();
   /* USER CODE BEGIN 2 */
 
   ApplMain();
@@ -154,11 +156,13 @@ void SystemClock_Config(void)
   * in the RCC_OscInitTypeDef structure.
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI48|RCC_OSCILLATORTYPE_HSI
-                              |RCC_OSCILLATORTYPE_HSE|RCC_OSCILLATORTYPE_LSE;
+                              |RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE
+                              |RCC_OSCILLATORTYPE_LSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.LSEState = RCC_LSE_ON;
   RCC_OscInitStruct.HSIState = RCC_HSI_DIV1;
   RCC_OscInitStruct.HSICalibrationValue = 64;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.HSI48State = RCC_HSI48_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;

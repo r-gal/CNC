@@ -1,7 +1,8 @@
-*.emProject
 *.emSession
 *.jlink
 *.mxproject
-Drivers/
 Output/
+CMSIS_5/
+STM32H7xx/
+PCB/
 !README.md
