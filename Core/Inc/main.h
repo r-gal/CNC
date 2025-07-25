@@ -72,6 +72,7 @@ void Error_Handler(void);
 #define SPEED_PERIOD 10
 #define configRUNTIME_TIMER htim7
 #define MASTER_FREQ 150000000
+#define HIWDG_ hiwdg1
 #define panel0_Pin GPIO_PIN_2
 #define panel0_GPIO_Port GPIOE
 #define limZ_Pin GPIO_PIN_3

@@ -51,7 +51,7 @@
     <configuration
       Name="Debug"
       c_preprocessor_definitions="USE_PWR_LDO_SUPPLY;USE_HAL_DRIVER;STM32H725xx;STM32_THREAD_SAFE_STRATEGY=5"
-      c_user_include_directories=".;Drivers\\CMSIS\\Include;Drivers\\STM32H7xx_HAL_Driver\\Inc;Drivers\\CMSIS\\Device\\ST\\STM32H7xx\\Include;FreeRTOS-Kernel\\include;FreeRTOS-Kernel\\portable\\GCC\\ARM_CM7\\r0p1;Core/Inc;Appl\\Inc;Lib_3D;Lib_Common;Lib_Ethernet"
+      c_user_include_directories=".;Drivers\\CMSIS\\Include;Drivers\\STM32H7xx_HAL_Driver\\Inc;Drivers\\CMSIS\\Device\\ST\\STM32H7xx\\Include;FreeRTOS-Kernel\\include;FreeRTOS-Kernel\\portable\\GCC\\ARM_CM7\\r0p1;Core/Inc;CNC_source\\Inc;CNC_source;Lib_3D;Lib_Common;Lib_Ethernet"
       link_linker_script_file="$(ProjectDir)/System/STM32H7xx_Flash_Variant6.icf"
       link_use_linker_script_file="Yes"
       linker_memory_map_file="$(ProjectDir)/System/STM32H725ZGTx_MemoryMap.xml"
@@ -60,7 +60,6 @@
       Name="Release"
       c_preprocessor_definitions="USE_PWR_LDO_SUPPLY;USE_HAL_DRIVER;STM32H725xx;STM32_THREAD_SAFE_STRATEGY=5"
       c_user_include_directories=".;cmsis-device-h7\\Include;stm32h7xx-hal-driver\\Inc;FreeRTOS-Kernel\\include;FreeRTOS-Kernel\\portable\\GCC\\ARM_CM7\\r0p1;Core/Inc;Appl\\Inc;Lib_Common;Lib_Ethernet;Lib_3D" />
-    <folder Name="Appl" exclude="" filter="" path="Appl" recurse="Yes" />
     <folder Name="CMSIS Files">
       <file file_name="STM32H7xx/Device/Include/stm32h7xx.h" />
       <file file_name="STM32H7xx/Device/Source/system_stm32h7xx.c">
@@ -71,6 +70,12 @@
         <configuration Name="Debug" build_exclude_from_build="Yes" />
       </file>
     </folder>
+    <folder
+      Name="CNC_source"
+      exclude=""
+      filter=""
+      path="CNC_source"
+      recurse="Yes" />
     <folder Name="Core" exclude="" filter="" path="Core" recurse="Yes" />
     <folder
       Name="Drivers"
@@ -78,7 +83,7 @@
       filter=""
       path="Drivers"
       recurse="Yes" />
-    <folder Name="FTOS">
+    <folder Name="FreeRTOS">
       <file file_name="FreeRTOS-Kernel/.git-blame-ignore-revs" />
       <file file_name="FreeRTOS-Kernel/.gitattributes" />
       <file file_name="FreeRTOS-Kernel/.gitmodules" />
@@ -113,44 +118,21 @@
       filter=""
       path="Lib_Ethernet"
       recurse="Yes" />
-    <folder Name="Script Files">
-      <file file_name="STM32H7xx/Scripts/STM32H7xx_Target.js">
-        <configuration Name="Common" file_type="Reset Script" />
-      </file>
-    </folder>
     <folder Name="Source">
       <file file_name="EthernetConfig.hpp" />
       <file file_name="FreeRTOSConfig.h" />
       <file file_name="GeneralConfig.h" />
     </folder>
     <folder Name="System">
-      <file file_name="System/SEGGER_THUMB_Startup.s">
-        <configuration Name="Debug" build_exclude_from_build="Yes" />
-      </file>
-      <file file_name="System/STM32H725XG_FLASH.ld" />
+      <file file_name="System/SEGGER_THUMB_Startup.s" />
       <file file_name="System/STM32H725ZGTx_MemoryMap.xml" />
       <file file_name="System/STM32H7xx_Flash_Variant6.icf" />
-      <file file_name="System/STM32H7xx_Startup.s">
-        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      <file file_name="System/STM32H7xx_Startup.s" />
+      <file file_name="System/STM32H7xx_Target.js">
+        <configuration Name="Common" file_type="Reset Script" />
       </file>
-      <file file_name="System/stm32h725xx_Vectors.s">
-        <configuration Name="Debug" build_exclude_from_build="Yes" />
-      </file>
-    </folder>
-    <folder Name="System Files">
-      <file file_name="SEGGER_THUMB_Startup.s">
-        <configuration Name="Debug" build_exclude_from_build="No" />
-        <configuration Name="Release" build_exclude_from_build="Yes" />
-      </file>
-      <file file_name="STM32H7xx/Source/STM32H7xx_Startup.s">
-        <configuration Name="Debug" build_exclude_from_build="No" />
-        <configuration Name="Release" build_exclude_from_build="Yes" />
-      </file>
-      <file file_name="STM32H7xx/Source/stm32h725xx_Vectors.s">
-        <configuration Name="Common" file_type="Assembly" />
-        <configuration Name="Debug" build_exclude_from_build="No" />
-        <configuration Name="Release" build_exclude_from_build="Yes" />
-      </file>
+      <file file_name="System/startup_stm32h725xx.s" />
+      <file file_name="System/stm32h725xx_Vectors.s" />
     </folder>
   </project>
 </solution>
