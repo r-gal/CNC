@@ -50,7 +50,7 @@
       target_trace_initialize_script="EnableTrace(&quot;$(TraceInterfaceType)&quot;)" />
     <configuration
       Name="Debug"
-      c_preprocessor_definitions="USE_PWR_LDO_SUPPLY;USE_HAL_DRIVER;STM32H725xx;STM32_THREAD_SAFE_STRATEGY=5"
+      c_preprocessor_definitions="USE_PWR_LDO_SUPPLY;USE_HAL_DRIVER;STM32H725xx;STM32_THREAD_SAFE_STRATEGY=5;ETHERNET_USE_RESET"
       c_user_include_directories=".;Drivers\\CMSIS\\Include;Drivers\\STM32H7xx_HAL_Driver\\Inc;Drivers\\CMSIS\\Device\\ST\\STM32H7xx\\Include;FreeRTOS-Kernel\\include;FreeRTOS-Kernel\\portable\\GCC\\ARM_CM7\\r0p1;Core/Inc;CNC_source\\Inc;CNC_source;Lib_3D;Lib_Common;Lib_Ethernet"
       link_linker_script_file="$(ProjectDir)/System/STM32H7xx_Flash_Variant6.icf"
       link_use_linker_script_file="Yes"
@@ -118,11 +118,7 @@
       filter=""
       path="Lib_Ethernet"
       recurse="Yes" />
-    <folder Name="Source">
-      <file file_name="EthernetConfig.hpp" />
-      <file file_name="FreeRTOSConfig.h" />
-      <file file_name="GeneralConfig.h" />
-    </folder>
+    <folder Name="Source" />
     <folder Name="System">
       <file file_name="System/SEGGER_THUMB_Startup.s" />
       <file file_name="System/STM32H725ZGTx_MemoryMap.xml" />
