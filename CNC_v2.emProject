@@ -55,6 +55,7 @@
       link_linker_script_file="$(ProjectDir)/System/STM32H7xx_Flash_Variant6.icf"
       link_use_linker_script_file="Yes"
       linker_memory_map_file="$(ProjectDir)/System/STM32H725ZGTx_MemoryMap.xml"
+      linker_output_format="bin"
       supplyPower="Yes" />
     <configuration
       Name="Release"
