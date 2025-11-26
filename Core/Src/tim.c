@@ -732,7 +732,7 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* tim_baseHandle)
     __HAL_RCC_TIM16_CLK_ENABLE();
 
     /* TIM16 interrupt Init */
-    HAL_NVIC_SetPriority(TIM16_IRQn, 12, 0);
+    HAL_NVIC_SetPriority(TIM16_IRQn, 9, 0);
     HAL_NVIC_EnableIRQ(TIM16_IRQn);
   /* USER CODE BEGIN TIM16_MspInit 1 */
 
@@ -747,7 +747,7 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* tim_baseHandle)
     __HAL_RCC_TIM23_CLK_ENABLE();
 
     /* TIM23 interrupt Init */
-    HAL_NVIC_SetPriority(TIM23_IRQn, 8, 0);
+    HAL_NVIC_SetPriority(TIM23_IRQn, 9, 0);
     HAL_NVIC_EnableIRQ(TIM23_IRQn);
   /* USER CODE BEGIN TIM23_MspInit 1 */
 
