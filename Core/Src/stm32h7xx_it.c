@@ -64,6 +64,9 @@ extern TIM_HandleTypeDef htim23;
 extern TIM_HandleTypeDef htim24;
 extern TIM_HandleTypeDef htim6;
 
+uint16_t globTimers[4];
+uint32_t globSyncTim;
+
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -172,7 +175,11 @@ void DebugMon_Handler(void)
 void TIM2_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM2_IRQn 0 */
-
+/*  globSyncTim = SYNC_TIMER.Instance->CNT;
+  globTimers[0] = AXE_X_TIMER.Instance->CNT;
+  globTimers[1] = AXE_Y_TIMER.Instance->CNT,
+  globTimers[2] = AXE_Z_TIMER.Instance->CNT,
+  globTimers[3] = AXE_A_TIMER.Instance->CNT; */
   /* USER CODE END TIM2_IRQn 0 */
   HAL_TIM_IRQHandler(&htim2);
   /* USER CODE BEGIN TIM2_IRQn 1 */
@@ -186,7 +193,11 @@ void TIM2_IRQHandler(void)
 void TIM5_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM5_IRQn 0 */
-
+ /* globSyncTim = SYNC_TIMER.Instance->CNT;
+  globTimers[0] = AXE_X_TIMER.Instance->CNT;
+  globTimers[1] = AXE_Y_TIMER.Instance->CNT,
+  globTimers[2] = AXE_Z_TIMER.Instance->CNT,
+  globTimers[3] = AXE_A_TIMER.Instance->CNT; */
   /* USER CODE END TIM5_IRQn 0 */
   HAL_TIM_IRQHandler(&htim5);
   /* USER CODE BEGIN TIM5_IRQn 1 */
@@ -228,7 +239,11 @@ void ETH_IRQHandler(void)
 void TIM15_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM15_IRQn 0 */
-
+ /* globSyncTim = SYNC_TIMER.Instance->CNT;
+  globTimers[0] = AXE_X_TIMER.Instance->CNT;
+  globTimers[1] = AXE_Y_TIMER.Instance->CNT,
+  globTimers[2] = AXE_Z_TIMER.Instance->CNT,
+  globTimers[3] = AXE_A_TIMER.Instance->CNT; */
   /* USER CODE END TIM15_IRQn 0 */
   HAL_TIM_IRQHandler(&htim15);
   /* USER CODE BEGIN TIM15_IRQn 1 */
@@ -250,12 +265,18 @@ void TIM16_IRQHandler(void)
   /* USER CODE END TIM16_IRQn 1 */
 }
 
+
 /**
   * @brief This function handles TIM23 global interrupt.
   */
 void TIM23_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM23_IRQn 0 */
+ /* globSyncTim = SYNC_TIMER.Instance->CNT;
+  globTimers[0] = AXE_X_TIMER.Instance->CNT;
+  globTimers[1] = AXE_Y_TIMER.Instance->CNT,
+  globTimers[2] = AXE_Z_TIMER.Instance->CNT,
+  globTimers[3] = AXE_A_TIMER.Instance->CNT; */
 
   /* USER CODE END TIM23_IRQn 0 */
   HAL_TIM_IRQHandler(&htim23);
@@ -270,7 +291,11 @@ void TIM23_IRQHandler(void)
 void TIM24_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM24_IRQn 0 */
-
+ /* globSyncTim = SYNC_TIMER.Instance->CNT;
+  globTimers[0] = AXE_X_TIMER.Instance->CNT;
+  globTimers[1] = AXE_Y_TIMER.Instance->CNT,
+  globTimers[2] = AXE_Z_TIMER.Instance->CNT,
+  globTimers[3] = AXE_A_TIMER.Instance->CNT; */
   /* USER CODE END TIM24_IRQn 0 */
   HAL_TIM_IRQHandler(&htim24);
   /* USER CODE BEGIN TIM24_IRQn 1 */

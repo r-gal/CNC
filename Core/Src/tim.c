@@ -125,7 +125,7 @@ void MX_TIM2_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 10;
+  sConfigOC.Pulse = 80;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -277,7 +277,7 @@ void MX_TIM5_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 10;
+  sConfigOC.Pulse = 80;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim5, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -476,7 +476,7 @@ void MX_TIM15_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 10;
+  sConfigOC.Pulse = 80;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
@@ -555,7 +555,7 @@ void MX_TIM23_Init(void)
   htim23.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim23.Init.Period = 4294967295;
   htim23.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim23.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  htim23.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim23) != HAL_OK)
   {
     Error_Handler();
@@ -623,7 +623,7 @@ void MX_TIM24_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 10;
+  sConfigOC.Pulse = 80;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim24, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -747,7 +747,7 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* tim_baseHandle)
     __HAL_RCC_TIM23_CLK_ENABLE();
 
     /* TIM23 interrupt Init */
-    HAL_NVIC_SetPriority(TIM23_IRQn, 9, 0);
+    HAL_NVIC_SetPriority(TIM23_IRQn, 8, 0);
     HAL_NVIC_EnableIRQ(TIM23_IRQn);
   /* USER CODE BEGIN TIM23_MspInit 1 */
 
